@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Досье + прожарка: 𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</title>
+<style>
+  :root {
+    --bg: #08090c;
+    --bg-card: #0f1116;
+    --bg-card-2: #151922;
+    --bg-roast: #1a0f0f;
+    --line: #2a3140;
+    --line-roast: #4a2020;
+    --ink: #eceef2;
+    --ink-dim: #9da5b4;
+    --ink-faint: #6b7385;
+    --ua-blue: #0057b7;
+    --ua-yellow: #ffd700;
+    --alert: #ff453a;
+    --alert-soft: rgba(255, 69, 58, 0.14);
+    --fire: #ff6b35;
+    --mono: "JetBrains Mono", "SF Mono", "Fira Code", Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    --radius: 12px;
+    --maxw: 960px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% -30%, rgba(0, 87, 183, 0.2), transparent),
+      radial-gradient(circle at 0% 80%, rgba(255, 69, 58, 0.08), transparent 50%);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px 120px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  nav.toc {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(8, 9, 12, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    margin: 0 -20px 32px;
+    padding: 10px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav.toc a {
+    color: var(--ink-faint);
+    text-decoration: none;
+    font-size: 12px;
+    font-family: var(--mono);
+    margin-right: 18px;
+    transition: color 0.15s;
+  }
+  nav.toc a:hover { color: var(--ua-yellow); }
+  nav.toc a.roast-link { color: var(--fire); }
+
+  header.hero {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    font-family: var(--mono);
+    color: var(--ua-yellow);
+    margin-bottom: 14px;
+    padding: 5px 11px;
+    background: rgba(0, 87, 183, 0.15);
+    border: 1px solid rgba(0, 87, 183, 0.35);
+    border-radius: 4px;
+  }
+  .kicker::before { content: "●"; color: var(--alert); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.08; font-weight: 800; }
+  h1 .cross { color: var(--alert); font-weight: 400; }
+  .tagline { margin-top: 16px; font-size: clamp(15px, 2vw, 19px); color: var(--ink-dim); max-width: 62ch; }
+  .roast-banner {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--alert-soft);
+    border: 1px solid var(--line-roast);
+    border-radius: var(--radius);
+    font-size: 14px;
+    color: #ffb4ae;
+  }
+
+  .stats-row {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .stat-tile {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .stat-tile .num { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--ua-yellow); line-height: 1; }
+  .stat-tile .lbl { margin-top: 5px; font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-tile.roast-stat { border-color: var(--line-roast); }
+  .stat-tile.roast-stat .num { color: var(--fire); }
+
+  section { margin: 44px 0; scroll-margin-top: 60px; }
+  h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ua-yellow);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+  }
+  h2.roast { color: var(--fire); border-color: var(--line-roast); }
+  h3 { font-size: 16px; font-weight: 700; margin: 0 0 10px; }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .card + .card { margin-top: 12px; }
+  .card.roast {
+    background: var(--bg-roast);
+    border-color: var(--line-roast);
+  }
+  .card.roast p { color: #e8d0cc; }
+  .card.roast strong { color: var(--fire); }
+
+  .grid-2 { display: grid; gap: 12px; }
+  @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  .topic {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--ua-blue);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .topic p { font-size: 14px; color: var(--ink-dim); margin: 0; }
+  .topic .evidence { margin-top: 10px; font-size: 12px; font-family: var(--mono); color: var(--ink-faint); font-style: italic; }
+
+  .lexicon { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+  .chip {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--bg-card-2);
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+  }
+  .chip.hot { background: var(--alert-soft); border-color: rgba(255,69,58,.35); color: #ff8a84; }
+  .chip.ua { background: rgba(0,87,183,.15); border-color: rgba(0,87,183,.4); color: #7eb8ff; }
+
+  table.words {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+  table.words th, table.words td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  table.words th { color: var(--ink-faint); font-weight: 500; font-size: 11px; text-transform: uppercase; }
+  table.words td:last-child { color: var(--ua-yellow); text-align: right; }
+  table.words tr:hover td { background: var(--bg-card-2); }
+
+  .template-box {
+    background: var(--bg-card-2);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+
+  .contradiction {
+    display: grid;
+    gap: 0;
+    border: 1px solid var(--line-roast);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .contradiction .side {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  .contradiction .side.a { background: rgba(0,87,183,.08); border-bottom: 1px solid var(--line); }
+  .contradiction .side.b { background: rgba(255,69,58,.06); }
+  .contradiction .label { font-size: 10px; font-family: var(--mono); color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+
+  .debate-timeline {
+    border-left: 2px solid var(--fire);
+    padding-left: 18px;
+    margin: 12px 0;
+  }
+  .debate-timeline .msg {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-family: var(--mono);
+    color: var(--ink-dim);
+  }
+  .debate-timeline .msg span { color: var(--ink-faint); font-size: 11px; }
+
+  .quotes { display: grid; gap: 12px; }
+  blockquote {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--alert);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  blockquote.roast-q { border-left-color: var(--fire); background: var(--bg-roast); }
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--ink-faint);
+    font-style: normal;
+  }
+  blockquote .roast-note { display: block; margin-top: 6px; font-size: 12px; color: var(--fire); font-style: italic; }
+
+  .cringe-meter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+  .cringe-meter .bar-bg {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-card-2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .cringe-meter .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ua-yellow), var(--fire));
+    border-radius: 4px;
+  }
+  .cringe-meter .pct { font-family: var(--mono); color: var(--fire); min-width: 36px; text-align: right; }
+
+  .chart-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .chart-title { font-size: 12px; color: var(--ink-faint); margin-bottom: 18px; font-family: var(--mono); }
+  .bars { display: flex; align-items: flex-end; gap: 2px; height: 130px; }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 0; }
+  .bar {
+    width: 100%; max-width: 26px;
+    background: linear-gradient(to top, var(--ua-blue), rgba(0,87,183,.35));
+    border-radius: 2px 2px 0 0; min-height: 2px;
+  }
+  .bar.peak { background: linear-gradient(to top, var(--ua-yellow), rgba(255,215,0,.4)); }
+  .bar-label { font-size: 8px; font-family: var(--mono); color: var(--ink-faint); }
+  .weekday-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; }
+  .wd { text-align: center; padding: 8px 3px; background: var(--bg-card-2); border-radius: 7px; border: 1px solid var(--line); }
+  .wd .d { font-size: 10px; color: var(--ink-faint); font-family: var(--mono); }
+  .wd .v { font-size: 16px; font-weight: 700; color: var(--ua-yellow); font-family: var(--mono); }
+  .wd.top { border-color: var(--ua-yellow); background: rgba(255,215,0,.08); }
+
+  .content-split {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .split-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .split-bar .name { min-width: 140px; color: var(--ink-dim); }
+  .split-bar .track { flex: 1; height: 22px; background: var(--bg-card-2); border-radius: 4px; overflow: hidden; }
+  .split-bar .fill { height: 100%; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-family: var(--mono); color: #000; font-weight: 600; }
+
+  .verdict {
+    background: linear-gradient(135deg, rgba(255,69,58,.1), rgba(0,87,183,.1));
+    border: 1px solid var(--line-roast);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-family: var(--mono);
+  }
+  footer a { color: var(--ua-blue); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="toc">
+  <a href="#summary">Резюме</a>
+  <a href="#roast" class="roast-link">🔥 Прожарка</a>
+  <a href="#psych">Психопортрет</a>
+  <a href="#machine">Контент-машина</a>
+  <a href="#topics">Темы</a>
+  <a href="#lexicon">Лексикон</a>
+  <a href="#templates">Шаблоны</a>
+  <a href="#cringe">Кринж</a>
+  <a href="#debates">Споры</a>
+  <a href="#quotes">Цитаты</a>
+  <a href="#activity">Активность</a>
+  <a href="#verdict">Вердикт</a>
+</nav>
+
+<header class="hero">
+  <div class="kicker">Полное досье · Exilenova+ Chat · 3037 сообщений · v2 прожарка</div>
+  <h1>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 <span class="cross">✙</span></h1>
+  <p class="tagline">Ник без @username, 10 аккаунтов «на запас», 430 раз слово «русня» и ноль дней без слова «террорист». Ночной куратор гore-ленты, который называет себя хищником, но по факту — самый трудолюбивый ретвитер в чате.</p>
+  <div class="roast-banner">⚠️ Уровень прожарки: максимальный. Всё ниже — выводы из 3037 реальных сообщений, август 2025 — май 2026. Без выдумок, с цитатами.</div>
+  <div class="stats-row">
+    <div class="stat-tile"><div class="num">3037</div><div class="lbl">сообщений</div></div>
+    <div class="stat-tile"><div class="num">430</div><div class="lbl">× «русня»</div></div>
+    <div class="stat-tile"><div class="num">2153</div><div class="lbl">ответов (71%)</div></div>
+    <div class="stat-tile"><div class="num">~49</div><div class="lbl">симв. в среднем</div></div>
+    <div class="stat-tile roast-stat"><div class="num">10</div><div class="lbl">аккаунтов</div></div>
+    <div class="stat-tile roast-stat"><div class="num">1881</div><div class="lbl">медиа пропущено</div></div>
+    <div class="stat-tile"><div class="num">33</div><div class="lbl">репостов отсеяно</div></div>
+    <div class="stat-tile"><div class="num">4951</div><div class="lbl">просканировано</div></div>
+  </div>
+</header>
+
+<section id="summary">
+  <h2>Резюме</h2>
+  <div class="card">
+    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> (Telegram id <code>6470210246</code>, публичного @username нет) — один из самых громких и одновобразных участников <a href="https://t.me/exilenova_chat">Exilenova+ Chat</a>. За ~10 месяцев — 3037 сохранённых текстовых сообщений из 4951 просмотренных. Ещё 1881 — чисто медиа без текста (он их кидает пачками, подписи — отдельно).</p>
+    <p><strong>Кто он по данным:</strong> информационный боевик pro-Ukraine лагеря. Не аналитик, не журналист, не военный эксперт. Его функция в экосистеме чата — <em>агрегатор и усилитель</em>: перекладывает сводки с ликвидациями, добавляет «русня пидары», спорит с ватниками до потери пульса, периодически вставляет ASCII-свиней.</p>
+    <p><strong>Расписание:</strong> живёт по ночному графику (пик 23:00–03:00 UTC, минимум 07:00 — 24 сообщения за всё время). Воскресенье — личный рекord: 741 сообщение. Понедельник — 468. Среда — 270. Вывод: в будни, видимо, «на работе», а в выходные — полная мобилизация.</p>
+    <p><strong>Языковой микс:</strong> русский (основа) + украинские вставки в эмotional-моментах + broken English когда «круто звучит» (<em>ruzzian pigs must die</em>). Reply-rate 71% — он почти никогда не пишет «в пустоту», всегда в чужом треде.</p>
+  </div>
+</section>
+
+<section id="roast">
+  <h2 class="roast">🔥 Прожарка</h2>
+
+  <div class="card roast">
+    <h3>1. «Predator» — а по факту ретвит-машина</h3>
+    <p>Ник <strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> обещает хищника. Реальность: 71% сообщений — ответы на чужое. Средняя длина 49 символов. Это либо «😁», либо «русня пидары», либо copy-paste заголовка «🔞💀роzzийский террорист был качественно ликвидирован скидом из дрона». Хищник охотится. Этот — сидит в чате и жмёт «переслать» быстрее, чем ты успеешь моргнуть.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>2. Словарный запас: 12 слов, 430 повторов «русня»</h3>
+    <p>Топ слов — это не лексикон, это <strong>манtra-loop</strong>: русня (430), русни (156), террористов (103), роzzийских (101), пидары (94), хуйло (81). Человек говорит «русня» чаще, чем «нужно» (51) и «всё» (61). Если убрать мат и «террориста» — останется «ахаха» (43) и «😁». Это не речь, это <em>заевшая пластинка с NSFW-обложкой</em>.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>3. Фабрика аккаунтов</h3>
+    <p>Сам признаётся: <em>«У меня 10 акков всего сейчас😁»</em>, <em>«Ну 5 акков уже заблочили, это 6😁»</em>, <em>«3 акка тогда забанили… пришлось номера докупать:)»</em>. То есть это не «один громкий голос» — это <strong>операция с резервными SIM-картами</strong>. Когда банят — включает следующий. Predator? Скорее <em>гидra с виртуальными номерами</em>.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>4. Религиозный шизо-микс за один вечер</h3>
+    <p>11 октября 2025, один тред: «Бандera, легенда и <strong>бог</strong>» → «Религия это <strong>фикция</strong>» → «Они пришли с <strong>космоса</strong>» → «Боги это <strong>ЗСУ</strong>». Плюс ранее: «Аллах сказал что русню нужно вырезать» + «Иншалла😁». Человек собрал все религии в одном UI и нажал «random()». Вера в НЛО (2026-04-11: «Я верю в ВСУ и НЛО») — логичное продолжение.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>5. ASCII-свиньи — его «Mona Lisa»</h3>
+    <p>Мем «РУСНЯ РАВНЯЙСЬ» с рядами 🐷👕👖 он постит <strong>минимум 15+ раз</strong> за период — полная версия с «СМИРНО / РАЗОЙТИСЬ / 🐖🐖🐖». Каждый раз заново копипастит 30 строк emoji-art. Это его единственный <em>оригинальный креативный вклад</em>. Остальное — шаблон «🔞💀 + роzzийский террорист + глагол + направление».</p>
+  </div>
+
+  <div class="card roast">
+    <h3>6. «Исторический факт» без фактов</h3>
+    <p>Фраза «Исторический факт» — его любимый mic drop. Используется после любой дичи: «русня биомусор, исторический факт», «Исторический фakt, даже в летописях написано про пидarов рабов», «Долбоёб так русский язык в Украине никогда не запрещали… Исторический факт». Ни одного источника. Ни одной даты. Просто magic words = win argument.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>7. Бизнес-консультант по разводу бабушек</h3>
+    <p>15 ноября 2025, серия сообщений: предлагает делать каналы «помощь героям СВО», чтобы <em>«бабки с расии отдавали свои пенсии на то чтобы русню убивали дроны»</em>, <em>«грех бабуль сруских на последнюю копейку не развести😁»</em>. Параллельно: <em>«фсбшники если хотите заработать американские доллары пишите в лс»</em> и <em>«Яндекс работает за американские доллары… русню сдать за милую душу:)»</em>. Predator превращается в <strong>мелкий scam-энтузиast</strong> между двумя репостами про FPV.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>8. Спортивный питание между genocide-тредами</h3>
+    <p>8 марта 2026, после очередной порции «ruzzian pigs must die»: внезапно <em>«Креатин / Витамин D / Магний / Протеин / Omega 3 + качалочка и всё норм будет:)»</em>. Через 3 сообщения снова «No problem, the world becomes cleaner when ruzzian pigs die». Это как если бы тренер из зала в перерыве между подходами обсуждал, как правильно резать врага на части. <strong>Split personality: Gymbro × Warlord.</strong></p>
+  </div>
+
+  <div class="card roast">
+    <h3>9. Дебаты уровня «какого ты года выпуска, пидar?»</h3>
+    <p>11 апреля 2026 — 40+ сообщений подряд одному оппоненту: «Пидar, голос», «Пидar какого ты года рождения», «Пидar, скинь цифры твои», «сосать хуй это твоё хобби:) Пидar», «пиздуй Пидar….соси хuи:)». Аргументация нулевая. Тактика — <strong>spam-until-they-leave</strong>. Когда спрашивают «Чучelo какого ты года выпуска?» — это не риторика, это буквально единственный приём.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>10. «ВСУ ТИТАНЫ 🦾🇺🇦» — кнопка «лайк»</h3>
+    <p>Фраза «🤖ВСУ ТИТАНЫ🦾🇺🇦» / «🤖ЗСУ ТИТАНИ🦾🇺🇦» — его аналог thumbs up. Без комментария. Без мысли. Просто маркер «я тут, я на правильной стороне». Можно было поставить реакцию emoji — но ему нужно целое сообщение, чтобы статистика росла.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>11. Ночной образ жизни</h3>
+    <p>762 сообщения между 00:00 и 03:59 UTC. 24 — в 07:00. Это либо <strong>бессонница от doomscrolling</strong>, либо другой часовой пояс (UTC+2/+3 — тогда это 03:00–07:00 по Киеву, что ещё хуже). «7 утра на дворе, алё улю:)» — пишет в 05:07 UTC. Человек не спит. Чат — его кровать.</p>
+  </div>
+
+  <div class="card roast">
+    <h3>12. Противоречие «животных жалко / русню режь»</h3>
+    <p>«Зверей жалко, а русню пускай рвёт на части» (2025-09-04). «Животных жалко, на русню похуй биомусор» (2025-12-29). «Зверей жалко, русню нет» (2026-04-22). Это не философская позиция — это <strong>performative empathy</strong>: жалость включается только когда нужно показать, что ты не монстр. Монстр включается через 5 минут.</p>
+  </div>
+</section>
+
+<section id="psych">
+  <h2>Психопортрет</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Архетип</h3>
+      <p><strong>Information warrior + forum troll.</strong> Не лидер мнений — усилитель чужих нарративов. Его ценность для чата: постоянное присутствие, готовность вступить в любой тред, знание мемов экосистемы (Мадяр, Баба Яга, «красные линии ХУЙЛА»).</p>
+    </div>
+    <div class="card">
+      <h3>Мотивация</h3>
+      <p><strong>Идеологическая + игровая.</strong> Война для него — sport с scoreboard: «русня дохнит по плану», «11 лет», «чем больше донатов — тем больше русни сдохнит». Донаты, ликвидации, обмен пленными — всё gamified.</p>
+    </div>
+    <div class="card">
+      <h3>Эмпатия</h3>
+      <p><strong>Избирательная.</strong> Траур по командиру РДК Денису (2025-12-27) — искренний. Радость от «наших девочек» на 8 марта — есть. Но к «протivнику» — полное обнуление человечности. Шкала: свои = люди, они = биомусор.</p>
+    </div>
+    <div class="card">
+      <h3>Самоидентификация</h3>
+      <p><strong>Крест ✙ + Predator.</strong> Верующий-неверующий. Боец дивана с 10 аккаунтами. «Я делаю свою работу» (2026-03-15). Какую — не уточняет, но судя по логам, работа = сидеть в Exilenova+ и крутить ленту.</p>
+    </div>
+  </div>
+</section>
+
+<section id="machine">
+  <h2>Контент-машина: из чего состоят 3037 сообщений</h2>
+  <div class="card">
+    <p>Оценка по паттернам (не взаимоисключающие категории):</p>
+    <div class="content-split">
+      <div class="split-bar">
+        <span class="name">Репосты сводок 🔞💀</span>
+        <div class="track"><div class="fill" style="width:45%;background:var(--alert)">~45%</div></div>
+      </div>
+      <div class="split-bar">
+        <span class="name">«русня» + реакции</span>
+        <div class="track"><div class="fill" style="width:25%;background:var(--fire)">~25%</div></div>
+      </div>
+      <div class="split-bar">
+        <span class="name">Споры / троллинг</span>
+        <div class="track"><div class="fill" style="width:15%;background:#a855f7">~15%</div></div>
+      </div>
+      <div class="split-bar">
+        <span class="name">«ВСУ ТИТАНЫ» / emoji</span>
+        <div class="track"><div class="fill" style="width:8%;background:var(--ua-blue)">~8%</div></div>
+      </div>
+      <div class="split-bar">
+        <span class="name">ASCII-мемы / прочее</span>
+        <div class="track"><div class="fill" style="width:7%;background:var(--ua-yellow)">~7%</div></div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:14px;color:var(--ink-dim)">1881 сообщение отсеяно как «только медia» — он кидает видео без текста, потом отдельно подписывает. Двухходовка для stat padding.</p>
+  </div>
+</section>
+
+<section id="topics">
+  <h2>Темы (развёрнуто)</h2>
+
+  <div class="topic">
+    <h3>🔞💀 Gore-агрегатор</h3>
+    <p>Основной контент — перепосты ликвидаций с каноническим шаблоном. Направления: Покровск, Купянск, Запорожье, Херсон, Донецк. Герои: 63 бригада, ССО, «Скеля», «Птахи Мадяра», 414 бригада. Любимые слова в капшенах: «качественно», «прожарка», «скид», «самовыпel», «200».</p>
+    <div class="evidence">Пример: «🔞💀роzzийский террорист на самокате был технично ликвидирован» · «🔞💀Разрыв роzzийского террориста на части скидом из дрона»</div>
+  </div>
+
+  <div class="topic">
+    <h3>📡 Мониторинг ударов по РФ</h3>
+    <p>Живой тicker: тревоги по БПЛА, ракетная опасность, списки регионов (Московская обл., Крым, Краснодар, Смоленск…). К 9 мая 2026 — особый hype: «1000 дронов на масковию», «последний парад ХУЙЛА».</p>
+    <div class="evidence">Формула: «русня пидары с [Малевки/Орлёнка/Засечного] бомбят сами себя» — когда ПВО бьёт по своим</div>
+  </div>
+
+  <div class="topic">
+    <h3>💰 Донаты и «русосрез»</h3>
+    <p>Постоянный call to action: «донать на ликвидацию русни», «заказать 3D принтер и ебашить самим», «русня ж нужно на бабос крутить». Донат = gamification очков.</p>
+    <div class="evidence">«Чем больше донатов тем больше русни сдохнит» · «а еще ярче для уничтожения русни заказать 3D принтер»</div>
+  </div>
+
+  <div class="topic">
+    <h3>🎭 Политика и медиа</h3>
+    <p>Зеленский vs ХУЙЛО, Трамп, Невзорov (длинный реpost), санкции, «20-й пакет». Реагирует на «перемирия» с яростью: «469 нарушений», «русня лживые пидары».</p>
+  </div>
+
+  <div class="topic">
+    <h3>🌍 Геополитика широкого профиля</h3>
+    <p>Иран (удары ЦАХАЛ), Израиль/Хamas, Латвия (атака на нефть), Казахстан «дадут пиздюлей». Всё через призму «русня vs мир».</p>
+  </div>
+
+  <div class="topic">
+    <h3>🍺 Бытовой троллинг</h3>
+    <p>Разводит алкоголиков в тредах: «Вьebи субмарину», «0,5 пивka и туда 100 водki», «Ты проebal свою жизнь в стакане». Советы по кикбоксингу и отказу от «шиков». Неожиданно human — если не считать контекст.</div>
+  </div>
+</section>
+
+<section id="lexicon">
+  <h2>Лексикон</h2>
+  <div class="lexicon">
+    <span class="chip hot">русня · 430</span>
+    <span class="chip hot">русни · 156</span>
+    <span class="chip hot">террорист · 59+</span>
+    <span class="chip hot">пидар · 64+</span>
+    <span class="chip hot">ХУЙЛО · 81</span>
+    <span class="chip hot">биомусор · 26</span>
+    <span class="chip hot">отсосия · —</span>
+    <span class="chip hot">самовыпel · —</span>
+    <span class="chip ua">ВСУ ТИТАНЫ</span>
+    <span class="chip ua">ЗСУ ТИТАНИ</span>
+    <span class="chip">🔞💀</span>
+    <span class="chip">Исторический факт</span>
+    <span class="chip">По факту</span>
+    <span class="chip">походу</span>
+    <span class="chip">ахаха · 43</span>
+    <span class="chip">чучело · 23</span>
+    <span class="chip">терпило</span>
+    <span class="chip">отсосия</span>
+    <span class="chip">русоподсвинки</span>
+    <span class="chip">красные линии</span>
+    <span class="chip">Баба Яга</span>
+    <span class="chip">груз 200</span>
+    <span class="chip">московский скороход</span>
+    <span class="chip">zадneприводный</span>
+    <span class="chip">трупин</span>
+    <span class="chip">масковия</span>
+  </div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table class="words">
+      <thead><tr><th>Слово</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>русня</td><td>430</td></tr>
+        <tr><td>русни</td><td>156</td></tr>
+        <tr><td>террористов</td><td>103</td></tr>
+        <tr><td>роzzийских</td><td>101</td></tr>
+        <tr><td>русню</td><td>99</td></tr>
+        <tr><td>пидары</td><td>94</td></tr>
+        <tr><td>хуйло</td><td>81</td></tr>
+        <tr><td>русне</td><td>66</td></tr>
+        <tr><td>пидар</td><td>64</td></tr>
+        <tr><td>ахаха</td><td>43</td></tr>
+        <tr><td>зсу / всу / бpla</td><td>48 / 29 / 42</td></tr>
+        <tr><td>бомбят</td><td>36</td></tr>
+        <tr><td>дохнит / дохнуть</td><td>26 / 26</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px;font-size:13px;color:var(--ink-faint)">«роzzийский» с двумя z — сознательная цензурная замена, фирменный стиль Exilenova-экосистемы. Он её копирует как API.</p>
+</section>
+
+<section id="templates">
+  <h2>Шаблоны и копипasta</h2>
+  <div class="card">
+    <h3>Шаблон A — ликвидация</h3>
+    <div class="template-box">🔞💀[Прилагательное] [действие] роzzийского террориста [обстоятельство места]
+Пример: «🔞💀Качественная ликвидация роzzийских террористов и техники мраzей»</div>
+
+    <h3>Шаблон B — реакция</h3>
+    <div class="template-box">русня [оскорбление] [обещание мести]
+Пример: «русня пидары за это ответят» · «русня пидоры с [место] бомбят сами себя»</div>
+
+    <h3>Шаблон C — одобрение</h3>
+    <div class="template-box">🤖[ВСУ|ЗСУ] ТИТАН[Ы|И]🦾🇺🇦</div>
+
+    <h3>Шаблон D — ASCII performance</h3>
+    <div class="template-box">РУСНЯ РАВНЯЙСЬ + 25 строк emoji + РАЗОЙТИСЬ + scatter 🐖</div>
+
+    <h3>Шаблон E — mic drop</h3>
+    <div class="template-box">Исторический факт · По факту · Таков путь · Всему своё время</div>
+  </div>
+</section>
+
+<section id="cringe">
+  <h2>Рейтинг кринжа</h2>
+  <div class="card">
+    <div class="cringe-meter"><span>Мulti-account bragging</span><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div><span class="pct">92%</span></div>
+    <div class="cringe-meter"><span>«Исторический факт» без фактов</span><div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div><span class="pct">88%</span></div>
+    <div class="cringe-meter"><span>Религиозный random()</span><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div><span class="pct">95%</span></div>
+    <div class="cringe-meter"><span>Scam-советы бабушкам</span><div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div><span class="pct">90%</span></div>
+    <div class="cringe-meter"><span>Debate spam «пидar, год рождения?»</span><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div><span class="pct">85%</span></div>
+    <div class="cringe-meter"><span>ASCII-свиньи ×15</span><div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div><span class="pct">78%</span></div>
+    <div class="cringe-meter"><span>Broken English flex</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="pct">70%</span></div>
+    <div class="cringe-meter"><span>Креатин между gore-постами</span><div class="bar-bg"><div class="bar-fill" style="width:97%"></div></div><span class="pct">97%</span></div>
+  </div>
+
+  <h2 style="margin-top:28px">Противоречия</h2>
+  <div class="contradiction">
+    <div class="side a"><div class="label">2025-10-11</div>«Бандera, легенда и бог» · «Их много» · «Они пришли с косmosa»</div>
+    <div class="side b"><div class="label">2025-10-11, +4 мин</div>«Религия это фикция» · «Да пох😁»</div>
+  </div>
+  <div class="contradiction">
+    <div class="side a"><div class="label">2025-08-10</div>«Аллах сказал что русню нужно вырезать» · «Иншалла😁»</div>
+    <div class="side b"><div class="label">2026-04-19</div>«Боги это ЗСУ» · «У каждого он свой»</div>
+  </div>
+  <div class="contradiction">
+    <div class="side a"><div class="label">2025-09-04</div>«Зверей жалko, а русню пускай рвёт на части»</div>
+    <div class="side b"><div class="label">2026-04-22</div>«Зверей жалko, русню нет» · «Из за русни пиdaрасов животинки страдают»</div>
+  </div>
+  <div class="contradiction">
+    <div class="side a"><div class="label">2025-10-25</div>«Та да, надеюсь всё изменится в будущем» — редкий мягкий тон</div>
+    <div class="side b"><div class="label">2025-10-25, +4 часа</div>«🔞💀Уничтоженные роzzийские террористы… десятки сгоревших тел»</div>
+  </div>
+</section>
+
+<section id="debates">
+  <h2>Case study: марафон 11 апреля 2026</h2>
+  <div class="card">
+    <p>После срыва «великодного перемирия» — 40+ сообщений одному оппонентu. Аргументация нулевая, тактика — verbal waterboarding:</p>
+    <div class="debate-timeline">
+      <div class="msg"><span>14:34</span> «Схуя русня делает на территории Украины?»</div>
+      <div class="msg"><span>14:41</span> «Бандera русню уничтожал это доброe дело, схуя ты скулишь»</div>
+      <div class="msg"><span>18:09</span> «Как думаешь почему русня такая счастливая?»</div>
+      <div class="msg"><span>18:11–18:35</span> «Пидar, голос» ×12 · «Пидar какого ты года рождения» ×4 · «сосать хуй это твоё хобби:)»</div>
+      <div class="msg"><span>18:16</span> «Шкура когда тебя на кafель опрокинули перед тем как пуповину русосvinomatka перегрызла?»</div>
+    </div>
+    <p style="margin-top:12px;color:var(--ink-dim);font-size:14px"><strong>Вывод:</strong> это не дebate, это <em>DDOS атака на нервную систему</em>. Predator охотится на реакцию, не на истину.</p>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <h3>Case study: Запорожье, 19 октября 2025</h3>
+    <p>30+ сообщений одному «ватнику» про население Запорожья, дonаты, «11 лет войны». Образовательный контент: zero. Токсичность: maximum. Highlight: «Ты блядь даже не знаешь какое население в Запорожье….лох».</p>
+  </div>
+</section>
+
+<section id="quotes">
+  <h2>Цитатник (15+)</h2>
+  <div class="quotes">
+    <blockquote class="roast-q">«Доброго дня. Кацапи піdaраси. Дякую за увагу.»<cite>2025-08-25</cite><span class="roast-note">Единственное сообщение, которое можно процитировать на конференции. И то с оговорками.</span></blockquote>
+    <blockquote>«Аллах сказал что русню нужно вырезать» / «Иншалла😁»<cite>2025-08-10</cite></blockquote>
+    <blockquote>«ruzzian pigs worthy only of a painful death, such is the way»<cite>2025-08-31</cite><span class="roast-note">Duolingo English: level «patriot».</span></blockquote>
+    <blockquote>«Бандera, легенда и бог» → «Религия это фикция» → «Боги это ЗСУ»<cite>2025-10-11, один вечер</cite></blockquote>
+    <blockquote>«У меня 10 акков всего сейчас😁» / «пришлось номера докупать:)»<cite>2025-11-15 · 2025-12-29</cite></blockquote>
+    <blockquote>«Можно бабok разводить на расии типo помощь ветеранам СВО… грех бабуль сруских на последнюю копейку не развести😁»<cite>2025-11-15</cite></blockquote>
+    <blockquote>«фсбшники если хотите заработать американские доллары пишите в лс»<cite>2026-03-06</cite></blockquote>
+    <blockquote>«Креатин / Витамин D / Магний / Протеин / Omega 3 + качалочка»<cite>2026-03-08 — между «ruzzian pigs must die»</cite></blockquote>
+    <blockquote>«Я верю в ВСУ и НЛО:)»<cite>2026-04-11</cite></blockquote>
+    <blockquote>«русня мразь, нелюди, пидары лживые запомнить нужно раз и навсегда»<cite>2026-04-11</cite></blockquote>
+    <blockquote>«Для начала вам нужно отрезать голову ХУЙЛО путina и выставить на всеобщее обозрение»<cite>2026-04-22</cite></blockquote>
+    <blockquote>«Живи чтобы уйти достойно, таков путь:)» / «Будь готов, жизнь сюрприз:)»<cite>2026-04-19 — rare wholesome mode</cite></blockquote>
+    <blockquote>«5 год русню ебут… русni подохло лям+… ХУЙЛО сказал русоскотu все равно сдохните»<cite>2026-03-12 — попытка summary за 5 лет в одном сообщении</cite></blockquote>
+    <blockquote>«На Запorожском направлении от удара FPV дрона погиб Денис командир РДК! Вечная память🫡»<cite>2025-12-27 — единственный по-настоящему человечный момент</cite></blockquote>
+    <blockquote>«Чей Крым?» × N<cite>2025-11-23 · 2025-12-30 · 2026-03-14 — любимый вопрос-ловушка</cite></blockquote>
+    <blockquote>«Гуф это дырявый обоссаный нosok»<cite>2026-05-09 — культурная экспертиза</cite></blockquote>
+  </div>
+</section>
+
+<section id="activity">
+  <h2>Активность</h2>
+  <div class="chart-wrap">
+    <div class="chart-title">По часам UTC · пик 23:00 = 213 · «ночная сменa» 00–03 = 762 msg</div>
+    <div class="bars">
+      <div class="bar-col"><div class="bar peak" style="height:93%"></div><span class="bar-label">0</span></div>
+      <div class="bar-col"><div class="bar peak" style="height:94%"></div><span class="bar-label">1</span></div>
+      <div class="bar-col"><div class="bar" style="height:81%"></div><span class="bar-label">2</span></div>
+      <div class="bar-col"><div class="bar peak" style="height:90%"></div><span class="bar-label">3</span></div>
+      <div class="bar-col"><div class="bar" style="height:31%"></div><span class="bar-label">4</span></div>
+      <div class="bar-col"><div class="bar" style="height:27%"></div><span class="bar-label">5</span></div>
+      <div class="bar-col"><div class="bar" style="height:26%"></div><span class="bar-label">6</span></div>
+      <div class="bar-col"><div class="bar" style="height:11%"></div><span class="bar-label">7</span></div>
+      <div class="bar-col"><div class="bar" style="height:39%"></div><span class="bar-label">8</span></div>
+      <div class="bar-col"><div class="bar" style="height:26%"></div><span class="bar-label">9</span></div>
+      <div class="bar-col"><div class="bar" style="height:57%"></div><span class="bar-label">10</span></div>
+      <div class="bar-col"><div class="bar" style="height:75%"></div><span class="bar-label">11</span></div>
+      <div class="bar-col"><div class="bar" style="height:65%"></div><span class="bar-label">12</span></div>
+      <div class="bar-col"><div class="bar" style="height:67%"></div><span class="bar-label">13</span></div>
+      <div class="bar-col"><div class="bar" style="height:74%"></div><span class="bar-label">14</span></div>
+      <div class="bar-col"><div class="bar" style="height:62%"></div><span class="bar-label">15</span></div>
+      <div class="bar-col"><div class="bar" style="height:53%"></div><span class="bar-label">16</span></div>
+      <div class="bar-col"><div class="bar" style="height:39%"></div><span class="bar-label">17</span></div>
+      <div class="bar-col"><div class="bar" style="height:62%"></div><span class="bar-label">18</span></div>
+      <div class="bar-col"><div class="bar" style="height:85%"></div><span class="bar-label">19</span></div>
+      <div class="bar-col"><div class="bar" style="height:56%"></div><span class="bar-label">20</span></div>
+      <div class="bar-col"><div class="bar" style="height:48%"></div><span class="bar-label">21</span></div>
+      <div class="bar-col"><div class="bar" style="height:65%"></div><span class="bar-label">22</span></div>
+      <div class="bar-col"><div class="bar peak" style="height:100%"></div><span class="bar-label">23</span></div>
+    </div>
+    <div class="weekday-grid">
+      <div class="wd"><div class="d">Пн</div><div class="v">468</div></div>
+      <div class="wd"><div class="d">Вт</div><div class="v">287</div></div>
+      <div class="wd"><div class="d">Ср</div><div class="v">270</div></div>
+      <div class="wd"><div class="d">Чт</div><div class="v">309</div></div>
+      <div class="wd"><div class="d">Пт</div><div class="v">406</div></div>
+      <div class="wd top"><div class="d">Сб</div><div class="v">556</div></div>
+      <div class="wd top"><div class="d">Вс</div><div class="v">741</div></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px;font-size:14px;color:var(--ink-dim)">
+    <p><strong>Интерпретация:</strong> ~10 msg/день в среднем. Воскресенье ×2.7 vs среда. Ночной shift 22:00–03:00 — 866 сообщений (28% всего). Это не casual user — это <em>regular</em>.</p>
+  </div>
+</section>
+
+<section id="verdict">
+  <h2 class="roast">Финальный вердикт</h2>
+  <div class="verdict">
+    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> — walking RSS-feed с комплексом хищника и словарём на 12 слов. Его вклад в Exilenova+ — не аналитика и не оригинальный контент, а <em>присутствие</em>: 3037 раз кто-то увидел «русня пидары» и понял, что чат живой.</p>
+    <p>Он — идеальный specimen информационной войны в Telegram: gore-реposts, multi-accounting, токсичные марафоны, ASCII-свиньи, «Исторический факт» без истории, вера в НЛО и ЗСУ одновременно, креатин между genocidal rhetoric. Крест в нике — decoration, не contradiction.</p>
+    <p><strong>Прожарка в одном предложении:</strong> это не Predator — это <em>бот, которого забыли выключить</em>, но который иногда выдаёт human moments (РДК, 8 марта, советы про кикбоксинг) — и от этого становится только жутче, потому что видно: там живой человек, который выбрал быть алгорitмом ненависти.</p>
+    <p style="margin-top:16px;font-size:13px;color:var(--ink-faint)">P.S. Если он прочитает это досьe — reply-rate 71% гарантирует: ответит. Скорее всего словом «русня» или ASCII-сvinьей. Мы уже готовы.</p>
+  </div>
+</section>
+
+<footer>
+  Источник: 3037 сообщений · <a href="https://t.me/exilenova_chat">Exilenova+ Chat</a> · авг 2025 — май 2026 · id 6470210246 · stats.json + messages.txt
+</footer>
+
+</div>
+</body>
+</html>
