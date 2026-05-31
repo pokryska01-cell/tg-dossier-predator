@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Досье + прожарка: 𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</title>
+<title>Досье v3 · полная прожарка · 𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</title>
 <style>
   :root {
     --bg: #08090c;
@@ -323,6 +323,15 @@
     font-family: var(--mono);
   }
   footer a { color: var(--ua-blue); text-decoration: none; }
+
+  table.chats { width:100%; border-collapse:collapse; font-size:13px; }
+  table.chats th, table.chats td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; }
+  table.chats th { font-family:var(--mono); font-size:10px; text-transform:uppercase; color:var(--ink-faint); }
+  table.chats td.num { font-family:var(--mono); color:var(--ua-yellow); text-align:right; white-space:nowrap; }
+  table.chats tr:hover td { background:var(--bg-card-2); }
+  .plot-twist { border:2px solid var(--fire); background:rgba(255,107,53,.08); padding:20px; border-radius:var(--radius); margin-bottom:16px; }
+  .plot-twist strong { color:var(--fire); }
+  code.block { display:block; margin:10px 0; padding:12px; background:#000; border-radius:8px; font-family:var(--mono); font-size:12px; color:#8f8; white-space:pre-wrap; }
 </style>
 </head>
 <body>
@@ -330,405 +339,167 @@
 
 <nav class="toc">
   <a href="#summary">Резюме</a>
-  <a href="#roast" class="roast-link">🔥 Прожарка</a>
-  <a href="#psych">Психопортрет</a>
-  <a href="#machine">Контент-машина</a>
-  <a href="#topics">Темы</a>
-  <a href="#lexicon">Лексикон</a>
-  <a href="#templates">Шаблоны</a>
-  <a href="#cringe">Кринж</a>
-  <a href="#debates">Споры</a>
+  <a href="#full">50k дамп</a>
+  <a href="#roast" class="roast-link">🔥 Прожарка x2</a>
+  <a href="#split">Два лица</a>
+  <a href="#antosha">vs Антоша</a>
+  <a href="#chats">93 чата</a>
   <a href="#quotes">Цитаты</a>
-  <a href="#activity">Активность</a>
   <a href="#verdict">Вердикт</a>
 </nav>
 
 <header class="hero">
-  <div class="kicker">Полное досье · Exilenova+ Chat · 3037 сообщений · v2 прожарка</div>
+  <div class="kicker">v3 · полный экспорт · 50,058 сообщений · 93 чата</div>
   <h1>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 <span class="cross">✙</span></h1>
-  <p class="tagline">Ник без @username, 10 аккаунтов «на запас», 430 раз слово «русня» и ноль дней без слова «террорист». Ночной куратор гore-ленты, который называет себя хищником, но по факту — самый трудолюбивый ретвитер в чате.</p>
-  <div class="roast-banner">⚠️ Уровень прожарки: максимальный. Всё ниже — выводы из 3037 реальных сообщений, август 2025 — май 2026. Без выдумок, с цитатами.</div>
+  <p class="tagline">Exilenova+ — лишь 4% его текста. Настоящий он — spam-бот на 93 чата, охотник на Антoshу с 10 SIM-картами и альтер-эго «Соня, гo спати» в Кава-чате.</p>
+  <div class="roast-banner">🔥 Прожарка усилена данными из полного дампа (май 2024 — ноя 2025). Exilenova — витрина. Подвал — реальность.</div>
   <div class="stats-row">
-    <div class="stat-tile"><div class="num">3037</div><div class="lbl">сообщений</div></div>
-    <div class="stat-tile"><div class="num">430</div><div class="lbl">× «русня»</div></div>
-    <div class="stat-tile"><div class="num">2153</div><div class="lbl">ответов (71%)</div></div>
-    <div class="stat-tile"><div class="num">~49</div><div class="lbl">симв. в среднем</div></div>
-    <div class="stat-tile roast-stat"><div class="num">10</div><div class="lbl">аккаунтов</div></div>
-    <div class="stat-tile roast-stat"><div class="num">1881</div><div class="lbl">медиа пропущено</div></div>
-    <div class="stat-tile"><div class="num">33</div><div class="lbl">репостов отсеяно</div></div>
-    <div class="stat-tile"><div class="num">4951</div><div class="lbl">просканировано</div></div>
+    <div class="stat-tile"><div class="num">50,058</div><div class="lbl">всего msg</div></div>
+    <div class="stat-tile"><div class="num">14,186</div><div class="lbl">текст</div></div>
+    <div class="stat-tile"><div class="num">35,872</div><div class="lbl">медиа</div></div>
+    <div class="stat-tile"><div class="num">93</div><div class="lbl">чатов</div></div>
+    <div class="stat-tile roast-stat"><div class="num">1051</div><div class="lbl">x «русня»</div></div>
+    <div class="stat-tile roast-stat"><div class="num">466</div><div class="lbl">x «антoша»</div></div>
+    <div class="stat-tile roast-stat"><div class="num">347</div><div class="lbl">x «обоссanое»</div></div>
+    <div class="stat-tile roast-stat"><div class="num">4%</div><div class="lbl">Exilenova текста</div></div>
   </div>
 </header>
 
 <section id="summary">
   <h2>Резюме</h2>
+  <div class="plot-twist">
+    <strong>Plot twist первого досьe:</strong> мы анализировали 3037 сообщений из Exilenova+ и нарисовали «ночного бойца одного чата». Полный Telegram-экспорт показал: <strong>563 текстовых сообщений из 14,186</strong> (4.0%) — там. Остальное — <strong>92 других чатов</strong>, media-spam и многолетняя одержимость человеком по имени Антоша.
+  </div>
   <div class="card">
-    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> (Telegram id <code>6470210246</code>, публичного @username нет) — один из самых громких и одновобразных участников <a href="https://t.me/exilenova_chat">Exilenova+ Chat</a>. За ~10 месяцев — 3037 сохранённых текстовых сообщений из 4951 просмотренных. Ещё 1881 — чисто медиа без текста (он их кидает пачками, подписи — отдельно).</p>
-    <p><strong>Кто он по данным:</strong> информационный боевик pro-Ukraine лагеря. Не аналитик, не журналист, не военный эксперт. Его функция в экосистеме чата — <em>агрегатор и усилитель</em>: перекладывает сводки с ликвидациями, добавляет «русня пидары», спорит с ватниками до потери пульса, периодически вставляет ASCII-свиней.</p>
-    <p><strong>Расписание:</strong> живёт по ночному графику (пик 23:00–03:00 UTC, минимум 07:00 — 24 сообщения за всё время). Воскресенье — личный рекord: 741 сообщение. Понедельник — 468. Среда — 270. Вывод: в будни, видимо, «на работе», а в выходные — полная мобилизация.</p>
-    <p><strong>Языковой микс:</strong> русский (основа) + украинские вставки в эмotional-моментах + broken English когда «круто звучит» (<em>ruzzian pigs must die</em>). Reply-rate 71% — он почти никогда не пишет «в пустоту», всегда в чужом треде.</p>
+    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> (id 6470210246) — не персона одного чата, а <em>распределённая токсичная сеть</em> в украинском Telegram-сегменте. С мая 2024 по ноябрь 2025 — <strong>50,058</strong> зафиксированных действий: 14,186 с текстом, 35,872 чистого медиа.</p>
+    <p>Три режима работы: <strong>(1)</strong> gore-агрегатор — Zolkin, HLEP, Marmuletik; <strong>(2)</strong> troll-colosseum — War Zone Inc vs Антоша; <strong>(3)</strong> social — «Пекельний КАВА» с музыкой, стикерами и «Соней».</p>
+    <p>Exilenova+ (1,688 msg total) — место, где он выглядит «идеологически чистым». Остальное — raw feed без фильтра.</p>
+  </div>
+</section>
+
+<section id="full">
+  <h2>Полный дамп: цифры</h2>
+  <div class="grid-2">
+    <div class="card"><h3>Топ дубликатов (copy-paste)</h3>
+      <p>&laquo;русня недonaция выблядков&raquo; — <strong>31x</strong><br>
+      &laquo;Убей русню получи бонус на карту&raquo; — <strong>21x</strong><br>
+      &laquo;Инструкция по ликвидации ХУИЛО путина&raquo; — <strong>20x</strong><br>
+      &laquo;Всему своё время&raquo; — 17x &middot; &laquo;Будем посмотреть&raquo; — 17x</p>
+    </div>
+    <div class="card"><h3>Media burst records</h3>
+      <p>7x [Video] — одна секунда, 7 чатов<br>
+      5x [Image] — одна секунда, 5 чатов (x3 случая)<br>
+      7x [GIF] подряд — Ukraine context chat<br>
+      Zolkin alone: <strong>5402</strong> media posts</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>Инструкция (20 reposts)</h3>
+    <code class="block">Инструкция по ликвидации ХУИЛО путина:
+
+1 — Легковой автомобиль
+2 — Багажник с дистанционным управлением
+3 — Дрон</code>
+    <p style="font-size:14px;color:var(--ink-dim)">Не метафора. Буквальный checklist, размножённый по чатам как мем. Юридически — остро. По кринжу — максимум.</p>
   </div>
 </section>
 
 <section id="roast">
-  <h2 class="roast">🔥 Прожарка</h2>
+  <h2 class="roast">🔥 Прожарка — полная версия (18 пунктов)</h2>
+  <div class="card roast"><h3>1. Plot twist: Exilenova — декорация</h3><p>Первое досье строилось на 3037 сообщениях из одного чата. Полный экспорт — <strong>50,058</strong> действий в <strong>93</strong> чатах. Текст в Exilenova+ — <strong>4.0%</strong> (563 из 14,186). Ты думал, это его дом? Это <em>витрина</em>. Реальная жизнь — в Золkine, War Zone и «Кава-чате».</p></div>
+  <div class="card roast"><h3>2. Не Predator — SEO-бот</h3><p><strong>35,872</strong> сообщений — чистое медиа без текста. Рекord: <strong>7 [Video]</strong> в одну секунду в 7 чатов (21.06.2024). Это не человек листает ленту — это <em>распределённый спам-клиент</em> с SIM-картами на скидку.</p></div>
+  <div class="card roast"><h3>3. «русня» x1051 — сломанный счётчик</h3><p>В Exilenova было 430 «русня». В полном дампе — <strong>1051</strong>. Плюс топ-дубликат «русня недонация выблядков» — <strong>31 раз</strong> copy-paste. Человек или macro? Суди сам: одно и то же в 4+ чата в одну минуту.</p></div>
+  <div class="card roast"><h3>4. Кампания «Убей — получи бонус»</h3><p>Фраза <em>«Убей русню получи бонус на карту»</em> — <strong>21 пост</strong>, разбросана по War Zone, Exilenova, Zolkin, Angels Apostle одновременно. Это не мнение — это <strong>рекламный слоган</strong>, как «скидки до 70%».</p></div>
+  <div class="card roast"><h3>5. Инструкция по ликвидации</h3><p>Текст <em>«Инструкция по ликвидации ХУИЛО путина»</em> — <strong>20 повторов</strong> в разных чатах. Содержание:<br><code class="block">Инструкция по ликвидации ХУИЛО путина:
 
-  <div class="card roast">
-    <h3>1. «Predator» — а по факту ретвит-машина</h3>
-    <p>Ник <strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> обещает хищника. Реальность: 71% сообщений — ответы на чужое. Средняя длина 49 символов. Это либо «😁», либо «русня пидары», либо copy-paste заголовка «🔞💀роzzийский террорист был качественно ликвидирован скидом из дрона». Хищник охотится. Этот — сидит в чате и жмёт «переслать» быстрее, чем ты успеешь моргнуть.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>2. Словарный запас: 12 слов, 430 повторов «русня»</h3>
-    <p>Топ слов — это не лексикон, это <strong>манtra-loop</strong>: русня (430), русни (156), террористов (103), роzzийских (101), пидары (94), хуйло (81). Человек говорит «русня» чаще, чем «нужно» (51) и «всё» (61). Если убрать мат и «террориста» — останется «ахаха» (43) и «😁». Это не речь, это <em>заевшая пластинка с NSFW-обложкой</em>.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>3. Фабрика аккаунтов</h3>
-    <p>Сам признаётся: <em>«У меня 10 акков всего сейчас😁»</em>, <em>«Ну 5 акков уже заблочили, это 6😁»</em>, <em>«3 акка тогда забанили… пришлось номера докупать:)»</em>. То есть это не «один громкий голос» — это <strong>операция с резервными SIM-картами</strong>. Когда банят — включает следующий. Predator? Скорее <em>гидra с виртуальными номерами</em>.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>4. Религиозный шизо-микс за один вечер</h3>
-    <p>11 октября 2025, один тред: «Бандera, легенда и <strong>бог</strong>» → «Религия это <strong>фикция</strong>» → «Они пришли с <strong>космоса</strong>» → «Боги это <strong>ЗСУ</strong>». Плюс ранее: «Аллах сказал что русню нужно вырезать» + «Иншалла😁». Человек собрал все религии в одном UI и нажал «random()». Вера в НЛО (2026-04-11: «Я верю в ВСУ и НЛО») — логичное продолжение.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>5. ASCII-свиньи — его «Mona Lisa»</h3>
-    <p>Мем «РУСНЯ РАВНЯЙСЬ» с рядами 🐷👕👖 он постит <strong>минимум 15+ раз</strong> за период — полная версия с «СМИРНО / РАЗОЙТИСЬ / 🐖🐖🐖». Каждый раз заново копипастит 30 строк emoji-art. Это его единственный <em>оригинальный креативный вклад</em>. Остальное — шаблон «🔞💀 + роzzийский террорист + глагол + направление».</p>
-  </div>
-
-  <div class="card roast">
-    <h3>6. «Исторический факт» без фактов</h3>
-    <p>Фраза «Исторический факт» — его любимый mic drop. Используется после любой дичи: «русня биомусор, исторический факт», «Исторический фakt, даже в летописях написано про пидarов рабов», «Долбоёб так русский язык в Украине никогда не запрещали… Исторический факт». Ни одного источника. Ни одной даты. Просто magic words = win argument.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>7. Бизнес-консультант по разводу бабушек</h3>
-    <p>15 ноября 2025, серия сообщений: предлагает делать каналы «помощь героям СВО», чтобы <em>«бабки с расии отдавали свои пенсии на то чтобы русню убивали дроны»</em>, <em>«грех бабуль сруских на последнюю копейку не развести😁»</em>. Параллельно: <em>«фсбшники если хотите заработать американские доллары пишите в лс»</em> и <em>«Яндекс работает за американские доллары… русню сдать за милую душу:)»</em>. Predator превращается в <strong>мелкий scam-энтузиast</strong> между двумя репостами про FPV.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>8. Спортивный питание между genocide-тредами</h3>
-    <p>8 марта 2026, после очередной порции «ruzzian pigs must die»: внезапно <em>«Креатин / Витамин D / Магний / Протеин / Omega 3 + качалочка и всё норм будет:)»</em>. Через 3 сообщения снова «No problem, the world becomes cleaner when ruzzian pigs die». Это как если бы тренер из зала в перерыве между подходами обсуждал, как правильно резать врага на части. <strong>Split personality: Gymbro × Warlord.</strong></p>
-  </div>
-
-  <div class="card roast">
-    <h3>9. Дебаты уровня «какого ты года выпуска, пидar?»</h3>
-    <p>11 апреля 2026 — 40+ сообщений подряд одному оппоненту: «Пидar, голос», «Пидar какого ты года рождения», «Пидar, скинь цифры твои», «сосать хуй это твоё хобби:) Пидar», «пиздуй Пидar….соси хuи:)». Аргументация нулевая. Тактика — <strong>spam-until-they-leave</strong>. Когда спрашивают «Чучelo какого ты года выпуска?» — это не риторика, это буквально единственный приём.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>10. «ВСУ ТИТАНЫ 🦾🇺🇦» — кнопка «лайк»</h3>
-    <p>Фраза «🤖ВСУ ТИТАНЫ🦾🇺🇦» / «🤖ЗСУ ТИТАНИ🦾🇺🇦» — его аналог thumbs up. Без комментария. Без мысли. Просто маркер «я тут, я на правильной стороне». Можно было поставить реакцию emoji — но ему нужно целое сообщение, чтобы статистика росла.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>11. Ночной образ жизни</h3>
-    <p>762 сообщения между 00:00 и 03:59 UTC. 24 — в 07:00. Это либо <strong>бессонница от doomscrolling</strong>, либо другой часовой пояс (UTC+2/+3 — тогда это 03:00–07:00 по Киеву, что ещё хуже). «7 утра на дворе, алё улю:)» — пишет в 05:07 UTC. Человек не спит. Чат — его кровать.</p>
-  </div>
-
-  <div class="card roast">
-    <h3>12. Противоречие «животных жалко / русню режь»</h3>
-    <p>«Зверей жалко, а русню пускай рвёт на части» (2025-09-04). «Животных жалко, на русню похуй биомусор» (2025-12-29). «Зверей жалко, русню нет» (2026-04-22). Это не философская позиция — это <strong>performative empathy</strong>: жалость включается только когда нужно показать, что ты не монстр. Монстр включается через 5 минут.</p>
-  </div>
+1 — Легковой автомобиль
+2 — Багажник с дистанционным управлением
+3 — Дрон</code><br>Predator с крестом в нике и инструкцией убийства через багажник. Telegram moderation enters the chat.</p></div>
+  <div class="card roast"><h3>6. Охота на Антoshу — 466 упоминаний</h3><p>Слово «антoша» — <strong>306 раз</strong> в топ-словах. War Zone Inc — личная война: «Антоша пидор голос», «лох обоссаный», «разбань мои 2 акка», «@pokrlnka кружок в личку». Это не политика — это <em>задротская vendetta</em> на админа, которая длится месяцами.</p></div>
+  <div class="card roast"><h3>7. «Обоссаное» — фирменный бренд</h3><p><strong>347</strong> сообщений со словом «обоссан*». Это его «здравствуйте». Вариации: «обоссаное чучело», «очко обоссаное», «пон ты обоссаное». Лексический уровень — <em>детский сад на солях</em>.</p></div>
+  <div class="card roast"><h3>8. 10 акков — он сам это flex&#x27;ит</h3><p>«У меня 10 акков», «5 заблочили», «номера докупать», «Оно меня забанило с 4х акков», «там я под другим акком». Это не persecution complex — это <strong>операционная модель</strong>: один человек = целая ферма личностей.</p></div>
+  <div class="card roast"><h3>9. Кава-чат: split personality</h3><p>В «Пекельном КАВА» — <strong>1809 текстов</strong>, 54 [Music], 196 [Sticker]. «Соня гo спати без тебя разберемся», «Главное мозг и сердце человека», «ах ты сучка, ну ладно». Через час — «ruzzian pigs must die». <strong>Dr. Jekyll из зала / Mr. Hyde из подвала.</strong></p></div>
+  <div class="card roast"><h3>10. Scam-консulting</h3><p>«Можно бабok разводить на расии типo помощь ветерanam СВО», «грех бабуль не развести», «фсбшники — американские доллары в лс». Predator — не только патриот, но и <em>aspiring fraudster</em> с бизнес-планом на пенсионерках.</p></div>
+  <div class="card roast"><h3>11. War Zone — главный Colosseum</h3><p>6593 сообщения, 3573 текста — больше, чем во всём Exilenova. Здесь он не «информатор», а <strong>gladiator</strong>: требует голосовые, кидает номера, провоцирует «кружок в личку», hour-long «пидar, год рождения».</p></div>
+  <div class="card roast"><h3>12. Zolkin + Marmuletik = конвейер</h3><p>7182 сообщения в Підвалах Золкіна (5402 медиа). 5151 в marmuletik. Контент не потребляет — <strong>засоряет</strong>. Подвалы превратились в его личный RSS с gore.</p></div>
+  <div class="card roast"><h3>13. GIF-спам в Ukraine context</h3><p>7 GIF подряд за 2 минуты (17.11.2025) — когда слов не хватает, включается sticker-DDoS. Argument lost? Deploy GIF.</p></div>
+  <div class="card roast"><h3>14. @pokrlnka</h3><p>В War Zone: «@pokrlnka Заднеприводное кружок в личку скинь:)». Кто-то из его аккаунтов — @pokrlnka. Досьe на GitHub — pokryska01-cell. Coincidence? Telegram small world, но <em>meta-прожарка</em> заслужена.</p></div>
+  <div class="card roast"><h3>15. Религия random() — unchanged</h3><p>Аллах + Бандera-bog + «религия фикция» + «НЛО» + «Боги это ЗСУ». Теперь с 50k сообщений это не баг — это <strong>feature</strong>.</p></div>
+  <div class="card roast"><h3>16. Креатин между genocide — unchanged</h3><p>«Креатин / Omega 3 + качалочка» между «Specially yang ruzzian pigs must die in agony». Gym influencer arc в parallel universe.</p></div>
+  <div class="card roast"><h3>17. «Исторический фakt» x16</h3><p>В полном дампе только 16 раз — значит, в Exilenova он экономил. В остальных 92 чатах просто <strong>матерится без цитирования летopисей</strong>.</p></div>
+  <div class="card roast"><h3>18. Итоговая формула</h3><p>50,058 msg = 35,872 media spam + 14,186 text (1051xрусня + 466xантoша + 347xобоссanое) + 93 chats + infinite cringe</p></div>
 </section>
 
-<section id="psych">
-  <h2>Психопортрет</h2>
+<section id="split">
+  <h2>Два лица одного id</h2>
   <div class="grid-2">
     <div class="card">
-      <h3>Архетип</h3>
-      <p><strong>Information warrior + forum troll.</strong> Не лидер мнений — усилитель чужих нарративов. Его ценность для чата: постоянное присутствие, готовность вступить в любой тред, знание мемов экосистемы (Мадяр, Баба Яга, «красные линии ХУЙЛА»).</p>
+      <h3>☠️ War Zone / Exilenova</h3>
+      <p>&laquo;русня пidары&raquo;, &laquo;ликвидирован&raquo;, &laquo;обоссanое&raquo;, &laquo;пидar голос&raquo;, &laquo;дonать на русосрез&raquo;, FSB в лс за доллары. Tone: <strong>genocidal gym bro.</strong></p>
     </div>
     <div class="card">
-      <h3>Мотивация</h3>
-      <p><strong>Идеологическая + игровая.</strong> Война для него — sport с scoreboard: «русня дохнит по плану», «11 лет», «чем больше донатов — тем больше русни сдохнит». Донаты, ликвидации, обмен пленными — всё gamified.</p>
-    </div>
-    <div class="card">
-      <h3>Эмпатия</h3>
-      <p><strong>Избирательная.</strong> Траур по командиру РДК Денису (2025-12-27) — искренний. Радость от «наших девочек» на 8 марта — есть. Но к «протivнику» — полное обнуление человечности. Шкала: свои = люди, они = биомусор.</p>
-    </div>
-    <div class="card">
-      <h3>Самоидентификация</h3>
-      <p><strong>Крест ✙ + Predator.</strong> Верующий-неверующий. Боец дивана с 10 аккаунтами. «Я делаю свою работу» (2026-03-15). Какую — не уточняет, но судя по логам, работа = сидеть в Exilenova+ и крутить ленту.</p>
+      <h3>☕ Пекельний КАВА</h3>
+      <p>&laquo;Соня гo спати&raquo;, &laquo;Прикольная картинка&raquo;, [Music]x54, [Sticker]x196, истории про бабушку и немцев. Tone: <strong>обычный человек</strong> — что делает первый режим ещё более unsettling.</p>
     </div>
   </div>
 </section>
 
-<section id="machine">
-  <h2>Контент-машина: из чего состоят 3037 сообщений</h2>
-  <div class="card">
-    <p>Оценка по паттернам (не взаимоисключающие категории):</p>
-    <div class="content-split">
-      <div class="split-bar">
-        <span class="name">Репосты сводок 🔞💀</span>
-        <div class="track"><div class="fill" style="width:45%;background:var(--alert)">~45%</div></div>
-      </div>
-      <div class="split-bar">
-        <span class="name">«русня» + реакции</span>
-        <div class="track"><div class="fill" style="width:25%;background:var(--fire)">~25%</div></div>
-      </div>
-      <div class="split-bar">
-        <span class="name">Споры / троллинг</span>
-        <div class="track"><div class="fill" style="width:15%;background:#a855f7">~15%</div></div>
-      </div>
-      <div class="split-bar">
-        <span class="name">«ВСУ ТИТАНЫ» / emoji</span>
-        <div class="track"><div class="fill" style="width:8%;background:var(--ua-blue)">~8%</div></div>
-      </div>
-      <div class="split-bar">
-        <span class="name">ASCII-мемы / прочее</span>
-        <div class="track"><div class="fill" style="width:7%;background:var(--ua-yellow)">~7%</div></div>
-      </div>
-    </div>
-    <p style="margin-top:16px;font-size:14px;color:var(--ink-dim)">1881 сообщение отсеяно как «только медia» — он кидает видео без текста, потом отдельно подписывает. Двухходовка для stat padding.</p>
+<section id="antosha">
+  <h2>Охота на Антoshу</h2>
+  <div class="card roast">
+    <p><strong>466</strong> сообщений с &laquo;антoш*&raquo; — отдельная saga длиной в полтора года. War Zone Inc — арена. Паттерн: потребовать голосовое &rarr; высмеять &rarr; &laquo;разбань акк&raquo; &rarr; &laquo;обоссanое&raquo; &rarr; repeat.</p>
+    <p>Антоша — админ/модератор (канал &laquo;zаписки vетерана&raquo;, банит за &laquo;обossali путina&raquo;). Predator — клиент, который не принимает бan и заводит аккаунты 6-10. <em>Это не про Украину. Это про ego, которое не пережило mute.</em></p>
   </div>
 </section>
 
-<section id="topics">
-  <h2>Темы (развёрнуто)</h2>
-
-  <div class="topic">
-    <h3>🔞💀 Gore-агрегатор</h3>
-    <p>Основной контент — перепосты ликвидаций с каноническим шаблоном. Направления: Покровск, Купянск, Запорожье, Херсон, Донецк. Герои: 63 бригада, ССО, «Скеля», «Птахи Мадяра», 414 бригада. Любимые слова в капшенах: «качественно», «прожарка», «скид», «самовыпel», «200».</p>
-    <div class="evidence">Пример: «🔞💀роzzийский террорист на самокате был технично ликвидирован» · «🔞💀Разрыв роzzийского террориста на части скидом из дрона»</div>
-  </div>
-
-  <div class="topic">
-    <h3>📡 Мониторинг ударов по РФ</h3>
-    <p>Живой тicker: тревоги по БПЛА, ракетная опасность, списки регионов (Московская обл., Крым, Краснодар, Смоленск…). К 9 мая 2026 — особый hype: «1000 дронов на масковию», «последний парад ХУЙЛА».</p>
-    <div class="evidence">Формула: «русня пидары с [Малевки/Орлёнка/Засечного] бомбят сами себя» — когда ПВО бьёт по своим</div>
-  </div>
-
-  <div class="topic">
-    <h3>💰 Донаты и «русосрез»</h3>
-    <p>Постоянный call to action: «донать на ликвидацию русни», «заказать 3D принтер и ебашить самим», «русня ж нужно на бабос крутить». Донат = gamification очков.</p>
-    <div class="evidence">«Чем больше донатов тем больше русни сдохнит» · «а еще ярче для уничтожения русни заказать 3D принтер»</div>
-  </div>
-
-  <div class="topic">
-    <h3>🎭 Политика и медиа</h3>
-    <p>Зеленский vs ХУЙЛО, Трамп, Невзорov (длинный реpost), санкции, «20-й пакет». Реагирует на «перемирия» с яростью: «469 нарушений», «русня лживые пидары».</p>
-  </div>
-
-  <div class="topic">
-    <h3>🌍 Геополитика широкого профиля</h3>
-    <p>Иран (удары ЦАХАЛ), Израиль/Хamas, Латвия (атака на нефть), Казахстан «дадут пиздюлей». Всё через призму «русня vs мир».</p>
-  </div>
-
-  <div class="topic">
-    <h3>🍺 Бытовой троллинг</h3>
-    <p>Разводит алкоголиков в тредах: «Вьebи субмарину», «0,5 пивka и туда 100 водki», «Ты проebal свою жизнь в стакане». Советы по кикбоксингу и отказу от «шиков». Неожиданно human — если не считать контекст.</div>
-  </div>
-</section>
-
-<section id="lexicon">
-  <h2>Лексикон</h2>
-  <div class="lexicon">
-    <span class="chip hot">русня · 430</span>
-    <span class="chip hot">русни · 156</span>
-    <span class="chip hot">террорист · 59+</span>
-    <span class="chip hot">пидар · 64+</span>
-    <span class="chip hot">ХУЙЛО · 81</span>
-    <span class="chip hot">биомусор · 26</span>
-    <span class="chip hot">отсосия · —</span>
-    <span class="chip hot">самовыпel · —</span>
-    <span class="chip ua">ВСУ ТИТАНЫ</span>
-    <span class="chip ua">ЗСУ ТИТАНИ</span>
-    <span class="chip">🔞💀</span>
-    <span class="chip">Исторический факт</span>
-    <span class="chip">По факту</span>
-    <span class="chip">походу</span>
-    <span class="chip">ахаха · 43</span>
-    <span class="chip">чучело · 23</span>
-    <span class="chip">терпило</span>
-    <span class="chip">отсосия</span>
-    <span class="chip">русоподсвинки</span>
-    <span class="chip">красные линии</span>
-    <span class="chip">Баба Яга</span>
-    <span class="chip">груз 200</span>
-    <span class="chip">московский скороход</span>
-    <span class="chip">zадneприводный</span>
-    <span class="chip">трупин</span>
-    <span class="chip">масковия</span>
-  </div>
+<section id="chats">
+  <h2>Карта 93 чатов (top-8)</h2>
   <div class="card" style="padding:0;overflow:hidden">
-    <table class="words">
-      <thead><tr><th>Слово</th><th>Частота</th></tr></thead>
-      <tbody>
-        <tr><td>русня</td><td>430</td></tr>
-        <tr><td>русни</td><td>156</td></tr>
-        <tr><td>террористов</td><td>103</td></tr>
-        <tr><td>роzzийских</td><td>101</td></tr>
-        <tr><td>русню</td><td>99</td></tr>
-        <tr><td>пидары</td><td>94</td></tr>
-        <tr><td>хуйло</td><td>81</td></tr>
-        <tr><td>русне</td><td>66</td></tr>
-        <tr><td>пидар</td><td>64</td></tr>
-        <tr><td>ахаха</td><td>43</td></tr>
-        <tr><td>зсу / всу / бpla</td><td>48 / 29 / 42</td></tr>
-        <tr><td>бомбят</td><td>36</td></tr>
-        <tr><td>дохнит / дохнуть</td><td>26 / 26</td></tr>
-      </tbody>
+    <table class="chats">
+      <thead><tr><th>Чат</th><th>Сообщений</th><th>Роль</th></tr></thead>
+      <tbody><tr><td>Підвали Золкіна</td><td class="num">7,182</td><td>5402 медиа · gore-ферма №1</td></tr>
+<tr><td>War Zone Inc Chat</td><td class="num">6,593</td><td>3573 текста · война с Антoshой</td></tr>
+<tr><td>Пекельний 😈 КАВА чат</td><td class="num">5,792</td><td>1809 текстов · «Соня, го спати»</td></tr>
+<tr><td>marmuletik_official</td><td class="num">5,151</td><td>кросс-постинг-машина</td></tr>
+<tr><td>Оперативно by HLEP</td><td class="num">4,562</td><td>новости + GIF</td></tr>
+<tr><td>Ріа-Мелітополь</td><td class="num">3,594</td><td>7 чатов одним кликом</td></tr>
+<tr><td>Ангелы Апостола</td><td class="num">2,542</td><td>дубли «русня недонация»</td></tr>
+<tr><td>Exilenova+ Chat</td><td class="num">1,688</td><td>4% текста · face для досье</td></tr></tbody>
     </table>
-  </div>
-  <p style="margin-top:12px;font-size:13px;color:var(--ink-faint)">«роzzийский» с двумя z — сознательная цензурная замена, фирменный стиль Exilenova-экосистемы. Он её копирует как API.</p>
-</section>
-
-<section id="templates">
-  <h2>Шаблоны и копипasta</h2>
-  <div class="card">
-    <h3>Шаблон A — ликвидация</h3>
-    <div class="template-box">🔞💀[Прилагательное] [действие] роzzийского террориста [обстоятельство места]
-Пример: «🔞💀Качественная ликвидация роzzийских террористов и техники мраzей»</div>
-
-    <h3>Шаблон B — реакция</h3>
-    <div class="template-box">русня [оскорбление] [обещание мести]
-Пример: «русня пидары за это ответят» · «русня пидоры с [место] бомбят сами себя»</div>
-
-    <h3>Шаблон C — одобрение</h3>
-    <div class="template-box">🤖[ВСУ|ЗСУ] ТИТАН[Ы|И]🦾🇺🇦</div>
-
-    <h3>Шаблон D — ASCII performance</h3>
-    <div class="template-box">РУСНЯ РАВНЯЙСЬ + 25 строк emoji + РАЗОЙТИСЬ + scatter 🐖</div>
-
-    <h3>Шаблон E — mic drop</h3>
-    <div class="template-box">Исторический факт · По факту · Таков путь · Всему своё время</div>
-  </div>
-</section>
-
-<section id="cringe">
-  <h2>Рейтинг кринжа</h2>
-  <div class="card">
-    <div class="cringe-meter"><span>Мulti-account bragging</span><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div><span class="pct">92%</span></div>
-    <div class="cringe-meter"><span>«Исторический факт» без фактов</span><div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div><span class="pct">88%</span></div>
-    <div class="cringe-meter"><span>Религиозный random()</span><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div><span class="pct">95%</span></div>
-    <div class="cringe-meter"><span>Scam-советы бабушкам</span><div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div><span class="pct">90%</span></div>
-    <div class="cringe-meter"><span>Debate spam «пидar, год рождения?»</span><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div><span class="pct">85%</span></div>
-    <div class="cringe-meter"><span>ASCII-свиньи ×15</span><div class="bar-bg"><div class="bar-fill" style="width:78%"></div></div><span class="pct">78%</span></div>
-    <div class="cringe-meter"><span>Broken English flex</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="pct">70%</span></div>
-    <div class="cringe-meter"><span>Креатин между gore-постами</span><div class="bar-bg"><div class="bar-fill" style="width:97%"></div></div><span class="pct">97%</span></div>
-  </div>
-
-  <h2 style="margin-top:28px">Противоречия</h2>
-  <div class="contradiction">
-    <div class="side a"><div class="label">2025-10-11</div>«Бандera, легенда и бог» · «Их много» · «Они пришли с косmosa»</div>
-    <div class="side b"><div class="label">2025-10-11, +4 мин</div>«Религия это фикция» · «Да пох😁»</div>
-  </div>
-  <div class="contradiction">
-    <div class="side a"><div class="label">2025-08-10</div>«Аллах сказал что русню нужно вырезать» · «Иншалла😁»</div>
-    <div class="side b"><div class="label">2026-04-19</div>«Боги это ЗСУ» · «У каждого он свой»</div>
-  </div>
-  <div class="contradiction">
-    <div class="side a"><div class="label">2025-09-04</div>«Зверей жалko, а русню пускай рвёт на части»</div>
-    <div class="side b"><div class="label">2026-04-22</div>«Зверей жалko, русню нет» · «Из за русни пиdaрасов животинки страдают»</div>
-  </div>
-  <div class="contradiction">
-    <div class="side a"><div class="label">2025-10-25</div>«Та да, надеюсь всё изменится в будущем» — редкий мягкий тон</div>
-    <div class="side b"><div class="label">2025-10-25, +4 часа</div>«🔞💀Уничтоженные роzzийские террористы… десятки сгоревших тел»</div>
-  </div>
-</section>
-
-<section id="debates">
-  <h2>Case study: марафон 11 апреля 2026</h2>
-  <div class="card">
-    <p>После срыва «великодного перемирия» — 40+ сообщений одному оппонентu. Аргументация нулевая, тактика — verbal waterboarding:</p>
-    <div class="debate-timeline">
-      <div class="msg"><span>14:34</span> «Схуя русня делает на территории Украины?»</div>
-      <div class="msg"><span>14:41</span> «Бандera русню уничтожал это доброe дело, схуя ты скулишь»</div>
-      <div class="msg"><span>18:09</span> «Как думаешь почему русня такая счастливая?»</div>
-      <div class="msg"><span>18:11–18:35</span> «Пидar, голос» ×12 · «Пидar какого ты года рождения» ×4 · «сосать хуй это твоё хобби:)»</div>
-      <div class="msg"><span>18:16</span> «Шкура когда тебя на кafель опрокинули перед тем как пуповину русосvinomatka перегрызла?»</div>
-    </div>
-    <p style="margin-top:12px;color:var(--ink-dim);font-size:14px"><strong>Вывод:</strong> это не дebate, это <em>DDOS атака на нервную систему</em>. Predator охотится на реакцию, не на истину.</p>
-  </div>
-
-  <div class="card" style="margin-top:12px">
-    <h3>Case study: Запорожье, 19 октября 2025</h3>
-    <p>30+ сообщений одному «ватнику» про население Запорожья, дonаты, «11 лет войны». Образовательный контент: zero. Токсичность: maximum. Highlight: «Ты блядь даже не знаешь какое население в Запорожье….лох».</p>
   </div>
 </section>
 
 <section id="quotes">
-  <h2>Цитатник (15+)</h2>
-  <div class="quotes">
-    <blockquote class="roast-q">«Доброго дня. Кацапи піdaраси. Дякую за увагу.»<cite>2025-08-25</cite><span class="roast-note">Единственное сообщение, которое можно процитировать на конференции. И то с оговорками.</span></blockquote>
-    <blockquote>«Аллах сказал что русню нужно вырезать» / «Иншалла😁»<cite>2025-08-10</cite></blockquote>
-    <blockquote>«ruzzian pigs worthy only of a painful death, such is the way»<cite>2025-08-31</cite><span class="roast-note">Duolingo English: level «patriot».</span></blockquote>
-    <blockquote>«Бандera, легенда и бог» → «Религия это фикция» → «Боги это ЗСУ»<cite>2025-10-11, один вечер</cite></blockquote>
-    <blockquote>«У меня 10 акков всего сейчас😁» / «пришлось номера докупать:)»<cite>2025-11-15 · 2025-12-29</cite></blockquote>
-    <blockquote>«Можно бабok разводить на расии типo помощь ветеранам СВО… грех бабуль сруских на последнюю копейку не развести😁»<cite>2025-11-15</cite></blockquote>
-    <blockquote>«фсбшники если хотите заработать американские доллары пишите в лс»<cite>2026-03-06</cite></blockquote>
-    <blockquote>«Креатин / Витамин D / Магний / Протеин / Omega 3 + качалочка»<cite>2026-03-08 — между «ruzzian pigs must die»</cite></blockquote>
-    <blockquote>«Я верю в ВСУ и НЛО:)»<cite>2026-04-11</cite></blockquote>
-    <blockquote>«русня мразь, нелюди, пидары лживые запомнить нужно раз и навсегда»<cite>2026-04-11</cite></blockquote>
-    <blockquote>«Для начала вам нужно отрезать голову ХУЙЛО путina и выставить на всеобщее обозрение»<cite>2026-04-22</cite></blockquote>
-    <blockquote>«Живи чтобы уйти достойно, таков путь:)» / «Будь готов, жизнь сюрприз:)»<cite>2026-04-19 — rare wholesome mode</cite></blockquote>
-    <blockquote>«5 год русню ебут… русni подохло лям+… ХУЙЛО сказал русоскотu все равно сдохните»<cite>2026-03-12 — попытка summary за 5 лет в одном сообщении</cite></blockquote>
-    <blockquote>«На Запorожском направлении от удара FPV дрона погиб Денис командир РДК! Вечная память🫡»<cite>2025-12-27 — единственный по-настоящему человечный момент</cite></blockquote>
-    <blockquote>«Чей Крым?» × N<cite>2025-11-23 · 2025-12-30 · 2026-03-14 — любимый вопрос-ловушка</cite></blockquote>
-    <blockquote>«Гуф это дырявый обоссаный нosok»<cite>2026-05-09 — культурная экспертиза</cite></blockquote>
-  </div>
-</section>
-
-<section id="activity">
-  <h2>Активность</h2>
-  <div class="chart-wrap">
-    <div class="chart-title">По часам UTC · пик 23:00 = 213 · «ночная сменa» 00–03 = 762 msg</div>
-    <div class="bars">
-      <div class="bar-col"><div class="bar peak" style="height:93%"></div><span class="bar-label">0</span></div>
-      <div class="bar-col"><div class="bar peak" style="height:94%"></div><span class="bar-label">1</span></div>
-      <div class="bar-col"><div class="bar" style="height:81%"></div><span class="bar-label">2</span></div>
-      <div class="bar-col"><div class="bar peak" style="height:90%"></div><span class="bar-label">3</span></div>
-      <div class="bar-col"><div class="bar" style="height:31%"></div><span class="bar-label">4</span></div>
-      <div class="bar-col"><div class="bar" style="height:27%"></div><span class="bar-label">5</span></div>
-      <div class="bar-col"><div class="bar" style="height:26%"></div><span class="bar-label">6</span></div>
-      <div class="bar-col"><div class="bar" style="height:11%"></div><span class="bar-label">7</span></div>
-      <div class="bar-col"><div class="bar" style="height:39%"></div><span class="bar-label">8</span></div>
-      <div class="bar-col"><div class="bar" style="height:26%"></div><span class="bar-label">9</span></div>
-      <div class="bar-col"><div class="bar" style="height:57%"></div><span class="bar-label">10</span></div>
-      <div class="bar-col"><div class="bar" style="height:75%"></div><span class="bar-label">11</span></div>
-      <div class="bar-col"><div class="bar" style="height:65%"></div><span class="bar-label">12</span></div>
-      <div class="bar-col"><div class="bar" style="height:67%"></div><span class="bar-label">13</span></div>
-      <div class="bar-col"><div class="bar" style="height:74%"></div><span class="bar-label">14</span></div>
-      <div class="bar-col"><div class="bar" style="height:62%"></div><span class="bar-label">15</span></div>
-      <div class="bar-col"><div class="bar" style="height:53%"></div><span class="bar-label">16</span></div>
-      <div class="bar-col"><div class="bar" style="height:39%"></div><span class="bar-label">17</span></div>
-      <div class="bar-col"><div class="bar" style="height:62%"></div><span class="bar-label">18</span></div>
-      <div class="bar-col"><div class="bar" style="height:85%"></div><span class="bar-label">19</span></div>
-      <div class="bar-col"><div class="bar" style="height:56%"></div><span class="bar-label">20</span></div>
-      <div class="bar-col"><div class="bar" style="height:48%"></div><span class="bar-label">21</span></div>
-      <div class="bar-col"><div class="bar" style="height:65%"></div><span class="bar-label">22</span></div>
-      <div class="bar-col"><div class="bar peak" style="height:100%"></div><span class="bar-label">23</span></div>
-    </div>
-    <div class="weekday-grid">
-      <div class="wd"><div class="d">Пн</div><div class="v">468</div></div>
-      <div class="wd"><div class="d">Вт</div><div class="v">287</div></div>
-      <div class="wd"><div class="d">Ср</div><div class="v">270</div></div>
-      <div class="wd"><div class="d">Чт</div><div class="v">309</div></div>
-      <div class="wd"><div class="d">Пт</div><div class="v">406</div></div>
-      <div class="wd top"><div class="d">Сб</div><div class="v">556</div></div>
-      <div class="wd top"><div class="d">Вс</div><div class="v">741</div></div>
-    </div>
-  </div>
-  <div class="card" style="margin-top:14px;font-size:14px;color:var(--ink-dim)">
-    <p><strong>Интерпретация:</strong> ~10 msg/день в среднем. Воскресенье ×2.7 vs среда. Ночной shift 22:00–03:00 — 866 сообщений (28% всего). Это не casual user — это <em>regular</em>.</p>
-  </div>
+  <h2>Цитатник v3</h2>
+  <div class="quotes"><blockquote class="roast-q">&laquo;Убей русню получи бонус на карту&raquo;<cite>07.07.2025 &middot; Exilenova+ · 7 чатов одновременно</cite><span class="roast-note">Слогan fraud-кампании, не шутка.</span></blockquote>
+<blockquote class="roast-q">&laquo;Инструкция по ликвидации ХУИЛО путина:&raquo;<cite>07.07.2025 &middot; War Zone</cite><span class="roast-note">20 reposts. Car + trunk + drone.</span></blockquote>
+<blockquote class="roast-q">&laquo;Можно бабok разводить на расии типo помощь ветерanam СВО, такое практикуем&raquo;<cite>15.11.2025 &middot; Exilenova+</cite><span class="roast-note">Business plan, slide 1.</span></blockquote>
+<blockquote class="roast-q">&laquo;У меня 10 акков всего сейчас&raquo;<cite>15.11.2025 &middot; Exilenova+</cite><span class="roast-note">Flex или confession?</span></blockquote>
+<blockquote class="roast-q">&laquo;Оно меня уже забанило с 4х акков&raquo;<cite>26.09.2025 &middot; Пекельний КАВА</cite><span class="roast-note">Lobster knows.</span></blockquote>
+<blockquote class="roast-q">&laquo;Соня гo спати без тебя разберемся&raquo;<cite>16.11.2025 &middot; Пекельний КАВА</cite><span class="roast-note">Predator after dark.</span></blockquote>
+<blockquote class="roast-q">&laquo;антoша шлюха голос:)&raquo;<cite>26.10.2025 &middot; War Zone</cite><span class="roast-note">466 mentions ecosystem.</span></blockquote>
+<blockquote class="roast-q">&laquo;Один акк чучело антоша забанил за то что путина обоссали&raquo;<cite>05.10.2025 &middot; War Zone</cite><span class="roast-note">Origin story of account #6.</span></blockquote>
+<blockquote class="roast-q">&laquo;@pokrlnka Заднеприводное кружок в личку скинь:)&raquo;<cite>26.10.2025 &middot; War Zone</cite><span class="roast-note">Meta.</span></blockquote>
+<blockquote class="roast-q">&laquo;фсбшники если хотите заработать американские доллары пишите в лс&raquo;<cite>06.03.2026 &middot; Exilenova+</cite><span class="roast-note">Recruiting?</span></blockquote>
+<blockquote class="roast-q">&laquo;Креатин / Витамин D / Магний / Протеин / Omega 3&raquo;<cite>08.03.2026 &middot; Exilenova+</cite><span class="roast-note">Between war crimes.</span></blockquote>
+<blockquote class="roast-q">&laquo;Я верю в ВСУ и НЛО:)&raquo;<cite>11.04.2026 &middot; Exilenova+</cite><span class="roast-note">Faith system patch notes.</span></blockquote>
+<blockquote class="roast-q">&laquo;Чем больше русни сдохнет тем мир будет ярче, твоя задача донатить&raquo;<cite>19.10.2025 &middot; Exilenova+</cite><span class="roast-note">Motivational speaker.</span></blockquote>
+<blockquote class="roast-q">&laquo;немцы кормили детей, бабуля до последнего их благодарила&raquo;<cite>25.08.2025 &middot; Пекельний КАВА</cite><span class="roast-note">Rare human. Same person.</span></blockquote>
+<blockquote class="roast-q">&laquo;лох разбань мои второй акк&raquo;<cite>21.09.2025 &middot; War Zone</cite><span class="roast-note">Multiboxing cries.</span></blockquote></div>
 </section>
 
 <section id="verdict">
-  <h2 class="roast">Финальный вердикт</h2>
+  <h2 class="roast">Финальный вердикт v3</h2>
   <div class="verdict">
-    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> — walking RSS-feed с комплексом хищника и словарём на 12 слов. Его вклад в Exilenova+ — не аналитика и не оригинальный контент, а <em>присутствие</em>: 3037 раз кто-то увидел «русня пидары» и понял, что чат живой.</p>
-    <p>Он — идеальный specimen информационной войны в Telegram: gore-реposts, multi-accounting, токсичные марафоны, ASCII-свиньи, «Исторический факт» без истории, вера в НЛО и ЗСУ одновременно, креатин между genocidal rhetoric. Крест в нике — decoration, не contradiction.</p>
-    <p><strong>Прожарка в одном предложении:</strong> это не Predator — это <em>бот, которого забыли выключить</em>, но который иногда выдаёт human moments (РДК, 8 марта, советы про кикбоксинг) — и от этого становится только жутче, потому что видно: там живой человек, который выбрал быть алгорitмом ненависти.</p>
-    <p style="margin-top:16px;font-size:13px;color:var(--ink-faint)">P.S. Если он прочитает это досьe — reply-rate 71% гарантирует: ответит. Скорее всего словом «русня» или ASCII-сvinьей. Мы уже готовы.</p>
+    <p>Первое досьe ловило <strong>тень на стене</strong>. Полный дамп — <strong>50,058 сообщений</strong> — показал монстра с гидрой: spam-bot, scam-slogans, инструкции через багажник, 466x &laquo;антoша&raquo;, 347x &laquo;обоссanое&raquo;, split personality в Кава-чате и 4% текста в Exilenova, куда ты изначально смотрел.</p>
+    <p><strong>𝙿𝚛𝚎𝚍𝚊𝚝𝚘𝚛 ✙</strong> — не хищник. Не патриот. Не analyst. Это <em>Telegram-паразит</em>: 72% media в полном дампе; копипастит ненависть в 93 чата как SEO-спамер; воюет с админом за разбан аккаунтов; flex'ит SIM-карты; между &laquo;must die in agony&raquo; советует Omega-3.</p>
+    <p><strong>Одна строка:</strong> человек, который превратил войну в личный MMO с 10 персонажами, 93 локациями и главным квестом &laquo;унизить Антoshу&raquo; — а Exilenova+ использует как screenshot для репутации.</p>
+    <p style="margin-top:14px;font-size:13px;color:#ffb4ae">P.S. Если он прочитает v3 — с вероятностью 90% ответит в War Zone, не здесь. С вероятностью 10% — &laquo;русня недonaция выблядков&raquo; в 4 чата одновременно. Мы готовы к обоим сценариям.</p>
   </div>
 </section>
 
 <footer>
-  Источник: 3037 сообщений · <a href="https://t.me/exilenova_chat">Exilenova+ Chat</a> · авг 2025 — май 2026 · id 6470210246 · stats.json + messages.txt
+  Источники: Exilenova+ dump (3037 msg, авг 2025&ndash;май 2026) + полный экспорт user-6470210246-messages (50&nbsp;058 msg, май 2024&ndash;ноя 2025, 93 чата) &middot; id 6470210246
 </footer>
 
 </div>
